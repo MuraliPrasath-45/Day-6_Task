@@ -1,3 +1,5 @@
+// 1.Write a “person” class to hold all the details.
+
 class Person{
   constructor(firstname,lastname,Dob,location)
   {
@@ -45,3 +47,31 @@ console.log(`All the Person Names are :
 "person3":${person3.firstname}
 "person4":${person4.firstname}
 "person5":${person5.firstname}`)
+
+// 2.write a class to calculate the Uber price.
+
+class UberPriceCalculator {
+    constructor() {
+      this.baseFare = 60;
+      this.costPerKilometer = 15;
+      this.costPerMinute = 2.5;
+      this.bookingFee = 30;
+    }
+  
+    calculatePrice(distanceInKilometers, timeInMinutes) {
+      // Calculate the fare based on distance and time
+      const distanceCost = this.costPerKilometer * distanceInKilometers;
+      const timeCost = this.costPerMinute * timeInMinutes;
+      const totalPrice = this.baseFare + distanceCost + timeCost + this.bookingFee;
+  
+      return totalPrice;
+    }
+  }
+
+  const calculator = new UberPriceCalculator();
+  const distanceInKilometers = 6.0;
+  const timeInMinutes = 10;
+  
+  const estimatedPriceINR = calculator.calculatePrice(distanceInKilometers, timeInMinutes);
+  console.log(`Estimated Uber price in INR: ₹${estimatedPriceINR}`);
+  
